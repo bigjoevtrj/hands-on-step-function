@@ -1,0 +1,11 @@
+accountId: "012345678901"
+region: us-east-1
+
+resources:
+  memory: 256
+
+vpc:
+  securityGroupIds:
+
+  subnetIds:
+

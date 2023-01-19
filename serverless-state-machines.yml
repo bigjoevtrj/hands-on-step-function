@@ -1,0 +1,7 @@
+stateMachines:
+  hands-on-step-function:
+    definition:
+      StartAt: 
+
+      States:
+        

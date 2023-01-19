@@ -1,0 +1,40 @@
+service: sdz-saga-integration
+
+package:
+  patterns:
+    - "!node_modules"
+    - ".env"
+    - "dist/src/**/*.js"
+    - "dist/node_modules/zod/**"
+
+custom:
+  config: ${file(./serverless-config.yml)}
+  serverlessPluginTypescript:
+    tsConfigFileLocation: "./tsconfigdist.json"
+
+useDotenv: true
+
+provider:
+  name: aws
+  profile: seedz-integration
+  runtime: nodejs16.x
+  timeout: 30
+  stage: dev
+  memorySize: ${self:custom.config.resources.memory}
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-plugin-typescript
+  - serverless-step-functions
+  - serverless-offline
+
+functions: ${file(./serverless-functions.yml)}
+
+stepFunctions: ${file(./serverless-state-machines.yml)}
+
+resources:
+  Resources:
+    StateMachineLogGroup:
+      Type: AWS::Logs::LogGroup
+      Properties:
+        LogGroupName: !Join ["/", ["stepfunctions", hands-on-step-function]]
