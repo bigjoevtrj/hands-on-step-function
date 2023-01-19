@@ -13,8 +13,7 @@
     "test": "jest --passWithNoTests --runInBand --noStackTrace --verbose",
     "test:watch": "jest --watch",
     "test:ci": "jest --coverage",
-    "rimraf": "./node_modules/rimraf/bin.js",
-    "prepare": "husky install"
+    "rimraf": "./node_modules/rimraf/bin.js"
   },
   "author": "Diogo Nunes",
   "license": "ISC",
