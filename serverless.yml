@@ -1,4 +1,4 @@
-service: sdz-saga-integration
+service: hands-on-step-function
 
 package:
   patterns:

@@ -1,0 +1,11 @@
+Step1:
+  name: Step1
+  handler: dist/src/Steps/Step1/handler.handler
+
+Step2:
+  name: Step2
+  handler: dist/src/Steps/Step2/handler.handler
+
+Step3:
+  name: Step3
+  handler: dist/src/Steps/Step3/handler.handler
